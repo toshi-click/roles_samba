@@ -1,0 +1,11 @@
+- name: Restart Samba services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items: "{{ samba_services }}"
+
+- name: Enable Samba services
+  service:
+    name: "{{ item }}"
+    enabled: yes
+  with_items: "{{ samba_services }}"
