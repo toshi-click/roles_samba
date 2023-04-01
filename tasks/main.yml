@@ -1,12 +1,5 @@
 ---
 # 参考：https://github.com/bertvv/ansible-role-samba
-- name: Include OS specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "os_{{ ansible_distribution }}.yml"
-    - "os_{{ ansible_os_family }}.yml"
-  tags: samba
-
 - name: Install Samba packages
   package:
     name: "{{ samba_packages }}"
