@@ -30,14 +30,6 @@ samba_mitigate_cve_2017_7494: true
 samba_server_min_protocol: "SMB2"
 samba_server_max_protocol: "SMB3"
 
-samba_packages:
-  - samba-common
-  - samba
-  - samba-client
-
-samba_vfs_packages:
-  - samba-vfs-modules
-
 samba_configuration_dir: /etc/samba
 samba_configuration: "{{ samba_configuration_dir }}/smb.conf"
 samba_username_map_file: "{{ samba_configuration_dir }}/smbusers"

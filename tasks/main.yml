@@ -1,17 +1,13 @@
 ---
 # 参考：https://github.com/bertvv/ansible-role-samba
 - name: Install Samba packages
-  package:
-    name: "{{ samba_packages }}"
+  ansible.builtin.package:
+    name:
+      - samba
+      - samba-common
+      - samba-client
+      - samba-vfs-modules
     state: present
-  tags: samba
-
-- name: Install Samba VFS extensions packages
-  package:
-    name: "{{ samba_vfs_packages }}"
-    state: present
-  when: samba_vfs_packages is defined
-  tags: samba
 
 - name: Create Samba shares root directory
   file:
